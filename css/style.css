@@ -1,4 +1,13 @@
+body{
+    background-color: lightgray;
+}
+
 #title{
     color: #e53170;
     font-weight: bold;
+}
+.form-container{
+    max-width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
