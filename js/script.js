@@ -36,3 +36,24 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+const cardMemberEl = document.getElementById("card-member");
+
+// * FUNZIONE CHE GENERA LA STRUTTURA DI UNA CARD
+const createHTMLCard = (name, role, email, img) => {
+  return `
+    <div class="col col-md-6 col-lg-4 d-flex">
+      <img src="./${img}" alt="${name}">
+      <div class="text-bg-dark flex-grow-1 p-4">
+        <h2 class="p-1">${name}</h2>
+          <div class="p-1">${role}</div>
+          <div class="p-1">${email}</div>
+      </div>
+    </div>
+  `;
+};
+// *CICLO CEHE STAMPA UNA CARD PER OGNI MEMBRO
+for(const member of teamMembers){
+  const{name, role, email, img} = member;
+cardMemberEl.innerHTML += createHTMLCard(name, role, email, img);
+}
