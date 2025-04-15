@@ -57,3 +57,22 @@ for(const member of teamMembers){
   const{name, role, email, img} = member;
 cardMemberEl.innerHTML += createHTMLCard(name, role, email, img);
 }
+
+// BONUS: FORM CHE AGGIUNGA UNA CARD
+const formEl = document.getElementById("form-new-member");
+const nameNewMember = document.getElementById("name-new-member");
+const roleNewMember= document.getElementById("role-new-member");
+const emailNewMember= document.getElementById("email-new-member");
+const imgNewMember= document.getElementById("img-new-member");
+
+formEl.addEventListener("submit",(e) =>{
+  e.preventDefault();
+  const name = nameNewMember.value;
+  const role = roleNewMember.value;
+  const email= emailNewMember.value;
+  const img = imgNewMember.value;
+  
+  const newMember = {name, role, email, img};
+  teamMembers.push(newMember);
+  cardMemberEl.innerHTML += createHTMLCard(name, role, email, img);
+});
